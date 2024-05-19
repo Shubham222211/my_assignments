@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js eval todolist</title>
+    <style>
+        .cont{
+            width: 100%;
+            border: 1px solid black;
+            
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        
+        .divs {
+            width: 80%;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .filters {
+            margin-bottom: 20px;
+        }
+
+        .filters span, .filters select {
+            margin-right: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        thead {
+            background-color: aliceblue;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: 1px solid black;
+            background-color: aliceblue;
+            transition: background-color 0.3s;
+        }
+
+        .pagination button:hover {
+            background-color: lightgray;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="divs">
+<h1 style="margin-left: 400px;">Employee Management System</h1>
+<span>Filter By Department:</span>
+<select id="filterBy">
+    <option value="">--select Department--</option>
+    <option value="hr">hr</option>
+    <option value="finance">finance</option>
+    <option value="marketing">marketing</option>
+    <option value="engineering">engineering</option>
+    <option value="operations">operations</option>
+</select>
+
+
+
+<span>Filter By Gender:</span>
+<select  id="filtergen">
+    <option value="">select gender</option>
+    <option value="male">male</option>
+    <option value="female">female</option>
+</select>
+
+
+
+
+
+
+<span>Sort By Salary:</span>
+<select  id="sortBy">
+    <option value="">price</option>
+    <option value="asc">Low To High</option>
+    <option value="desc">High To Low</option>
+</select>
+
+
+
+
+
+    <table style="width: 900px;">
+        <thead style="width: 900px; background-color: aliceblue;align-items: center;">
+            <th>S.no</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Salary</th>
+        </thead>
+        <tbody class="cont" style="background-color: aliceblue; margin-left: 20px;">
+
+        </tbody>
+    </table>
+</div>
+    <button class="prevbtn">Prev</button>
+    <button class="nextbtn">Next</button>
+</body>
+</html>
+
+<script>
+
+    let cont=document.querySelector(".cont")
+    let filterBy=document.querySelector("#filterBy")
+    let filtergen=document.querySelector("#filtergen")
+    let sortBy=document.querySelector("#sortBy")
+    let prevBtn = document.querySelector(".prevbtn");
+    let nextBtn = document.querySelector(".nextbtn");
+
+
+    let currentPage = 1;
+    let totalPages;
+
+
+
+let newarr=[]
+
+    async function fetchData(page=1){
+
+        let resp=await fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${page}&limit=10`)
+        let mydata=await resp.json()
+        newarr=mydata.data
+        totalPages = mydata.totalPages
+        showData(mydata.data)
+        // filterfun()
+        console.log(mydata.data)
+    }
+    fetchData(currentPage)
+
+
+    function showData(arr){
+        cont.innerHTML=""
+        arr.forEach((el)=>{
+
+            let tr=document.createElement("tr")
+
+            let sno=document.createElement("td")
+            sno.innerText=el.id
+
+            let name=document.createElement("td")
+            name.innerText=el.name
+
+            let gender=document.createElement("td")
+            gender.innerText=el.gender
+
+            let department=document.createElement("td")
+            department.innerText=el.department
+
+            let salary=document.createElement("td")
+            salary.innerText=el.salary
+
+            cont.append(tr)
+            tr.append(sno,name,gender,department,salary)
+
+        })
+    }
+
+
+    filterBy.addEventListener("change",function(){
+        let value=filterBy.value
+        // console.log(value)
+        let filtered
+        if(value==""){
+            showData(newarr)
+        }else{
+
+       
+        // console.log(newarr)
+        filtered=newarr.filter(function(el){
+            if(el.department===value){
+                return true 
+            }else{
+                return false
+            }
+        })
+        // console.log(filtered)
+        showData(filtered)
+    }
+    })
+
+
+
+    
+    filtergen.addEventListener("change",function(){
+        let value=filtergen.value
+        console.log(value)
+        let filtered
+        if(value==""){
+            showData(newarr)
+        }else{
+
+       
+        // console.log(newarr)
+        filtered=newarr.filter(function(el){
+            if(el.gender===value){
+                return true 
+            }else{
+                return false
+            }
+        })
+        // console.log(filtered)
+        showData(filtered)
+    }
+    })
+
+
+
+
+    sortBy.addEventListener("change",sortData)
+
+function sortData(){
+let value=sortBy.value
+let sortered
+
+if(value==="asc"){
+    sortered=newarr.sort(function(a,b){
+        return a.salary-b.salary
+    })
+}else if(value==="desc"){
+    sortered=newarr.sort(function(a,b){
+        return b.salary-a.salary
+    })
+}else if(value===""){
+    showData(newarr)
+}
+showData(sortered)
+}
+
+
+let pagenum=1
+
+
+prevBtn.addEventListener("click", () => {
+        if (currentPage > 1) {
+            currentPage--;
+            fetchData(currentPage);
+        }
+    });
+
+    nextBtn.addEventListener("click", () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            fetchData(currentPage);
+        }
+    });
+
+
+</script>
