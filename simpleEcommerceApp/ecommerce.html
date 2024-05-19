@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            margin: auto;
+            gap: 30px;
+            width: 70%;
+        }
+        .cont img{
+            width: 100%;
+            /* height: 200px; */
+        }
+
+        .navbar{
+            display: flex;
+            flex-direction:row;
+            justify-content: space-between;
+            padding: auto;
+            margin: auto;
+            background-color: rgb(20, 19, 17);
+            color: white;
+        }
+
+        .navbar2{
+            padding-top: 29px;
+        }
+
+
+        #sortby{
+            height: 30px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>Product Listing Page</h1>
+    <div class="navbar2">
+
+        <select  id="filterBy">
+            <option value="">Mens's Clothing</option>
+            <option value="men's clothing">men's clothing</option>
+            <option value="jewelery">jewelery</option>
+            <option value="women's clothing">women's clothing</option>
+            <option value="electronics">electronics</option>
+        </select>
+
+        <input type="text" placeholder="search by title..." id="searchinp">
+    </div>
+
+
+
+
+
+    <select id="sortby">
+        <option value="">Price Range</option>
+        <option value="asc">Low To High</option>
+        <option value="desc">High To Low</option>
+    </select>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    <div class="cont">
+
+    </div>
+</body>
+</html>
+<script>
+
+    let cont=document.querySelector(".cont")
+    let arrdata=[]
+async function fetchData(){
+
+let resp= await fetch(`https://fakestoreapi.com/products`)
+let resdata= await resp.json()
+    arrdata=resdata
+showData(resdata)
+console.log(resdata)
+}
+fetchData()
+
+
+function showData(mydata){
+    cont.innerHTML=""
+mydata.forEach((el)=>{
+
+    let divs=document.createElement("div")
+
+ let images=document.createElement("img")
+ images.setAttribute("src",el.image)
+    
+let title=document.createElement("h4")
+title.innerText=el.title
+
+let price=document.createElement("p")
+price.innerText="Price:"+el.price
+
+cont.append(divs)
+divs.append(images,title,price)
+
+});
+}
+
+
+let filterBy=document.querySelector("#filterBy")
+filterBy.addEventListener("change",function(){
+
+    if(filterBy.value==""){
+        showData(arrdata)
+    }else{
+
+    
+
+    let filtered=arrdata.filter(function(el){
+        if(el.category==filterBy.value){
+            return true
+        }else{
+            return false
+        }
+    })
+
+    showData(filtered)
+}
+})
+
+
+
+let sortby=document.querySelector("#sortby")
+sortby.addEventListener("change",sortData)
+
+function sortData(){
+    let value=sortby.value
+    let sortProd
+
+    if(value=="asc"){
+        sortProd=arrdata.sort(function(a,b){
+            return a.price-b.price
+        })
+    }else if(value=="desc"){
+        sortProd=arrdata.sort(function(a,b){
+            return b.price-a.price
+        })
+    }else {
+        sortProd=arrdata
+        // return
+    }
+    showData(sortProd)
+    console.log(sortProd)
+}
+
+
+let searchinp=document.querySelector("#searchinp")
+searchinp.addEventListener("input",function(){
+// console.log(searchinp.value)
+let searchValue=arrdata.filter(function(el){
+    if(el.title.toLowerCase().includes(searchinp.value.toLowerCase())===true){
+        return true
+    }else{
+        return false
+    }
+})
+showData(searchValue)
+})
+</script>
