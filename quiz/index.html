@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            margin-top: 1300px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #555;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .options {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .options div {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .score {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        
+    </div>
+</body>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    function Quiz() {
+        const [currentAns, setCurrentAns] = React.useState({});
+        const [submitted, setSubmitted] = React.useState(false);
+        const [score, setScore] = React.useState(null);
+
+        const data = [
+            {
+                question: "What is the capital of France?",
+                options: ["Berlin", "Madrid", "Paris", "Rome"],
+                correctAnswer: "Paris"
+            },
+            {
+                question: "Who wrote 'To Kill a Mockingbird'?",
+                options: ["Harper Lee", "Mark Twain", "Ernest Hemingway", "F. Scott Fitzgerald"],
+                correctAnswer: "Harper Lee"
+            },
+            {
+                question: "What is the largest planet in our solar system?",
+                options: ["Earth", "Jupiter", "Mars", "Saturn"],
+                correctAnswer: "Jupiter"
+            },
+            {
+                question: "What is the capital city of France?",
+                options: ["Berlin", "Madrid", "Paris", "Rome"],
+                correctAnswer: "Paris"
+            },
+            {
+                question: "Which element has the chemical symbol 'O'?",
+                options: ["Gold", "Oxygen", "Silver", "Hydrogen"],
+                correctAnswer: "Oxygen"
+            },
+            {
+                question: "Who wrote 'Romeo and Juliet'?",
+                options: ["Charles Dickens", "Jane Austen", "Mark Twain", "William Shakespeare"],
+                correctAnswer: "William Shakespeare"
+            },
+            {
+                question: "What is the smallest prime number?",
+                options: ["1", "2", "3", "5"],
+                correctAnswer: "2"
+            },
+            {
+                question: "What is the largest ocean on Earth?",
+                options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+                correctAnswer: "Pacific Ocean"
+            },
+            {
+                question: "What is the hardest natural substance on Earth?",
+                options: ["Gold", "Iron", "Diamond", "Platinum"],
+                correctAnswer: "Diamond"
+            },
+            {
+                question: "Who painted the Mona Lisa?",
+                options: ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Claude Monet"],
+                correctAnswer: "Leonardo da Vinci"
+            }
+        ];
+
+        const handleChangeOption = (questionIndex, option) => {
+            setCurrentAns({ ...currentAns, [questionIndex]: option });
+        };
+
+        const handleSubmit = () => {
+            let newScore = 0;
+            data.forEach((question, index) => {
+                if (currentAns[index] === question.correctAnswer) {
+                    newScore++;
+                }
+            });
+            setSubmitted(true);
+            setScore(newScore);
+        };
+
+        return (
+            <div className="container">
+                <h1>Simple Quiz</h1>
+                <h2>Test your knowledge!</h2>
+                {data.map((ele, i) => (
+                    <div key={i} className="question">
+                        <h3>{ele.question}</h3>
+                        <div className="options">
+                            {ele.options.map((item, itemIndex) => (
+                                <div key={itemIndex}>
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name={`question${i}`}
+                                            value={item}
+                                            onChange={() => handleChangeOption(i, item)}
+                                            checked={currentAns[i] === item}
+                                        />
+                                        {item}
+                                    </label>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+                <button onClick={handleSubmit}>Submit</button>
+                {submitted && <div className="score">Score: {score}</div>}
+            </div>
+        );
+    }
+
+    function App() {
+        return <Quiz />;
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+
+</html>
