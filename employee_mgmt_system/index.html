@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js eval todolist</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="divs">
+        <h1 style="color: rgb(134, 4, 4);">Employee Management System</h1>
+        <span>Filter By Department:</span>
+        <select id="filterBy">
+            <option value="">-Select Department-</option>
+            <option value="hr">hr</option>
+            <option value="finance">finance</option>
+            <option value="marketing">marketing</option>
+            <option value="engineering">engineering</option>
+            <option value="operations">operations</option>
+        </select>
+
+        <span>Filter By Gender:</span>
+        <select id="filtergen">
+            <option value="">Select Gender</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select>
+
+        <span>Sort By Salary:</span>
+        <select id="sortBy">
+            <option value="">price</option>
+            <option value="asc">Low To High</option>
+            <option value="desc">High To Low</option>
+        </select>
+
+        <table style="width: 900px;margin-top: 20px;margin-left: 70px;">
+            <thead style="width: 900px; background-color: aliceblue;align-items: center;">
+                <tr>
+                    <th>S.no</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody class="cont" style="background-color: aliceblue; margin-left: 20px;"></tbody>
+        </table>
+    </div>
+    <button class="prevbtn">Prev</button>
+    <button class="nextbtn">Next</button>
+
+    <script src="index.js"></script>
+</body>
+</html>
