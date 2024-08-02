@@ -16,15 +16,26 @@ Timer: A functional timer application.
 HTML
 
 CSS
+
 JavaScript
+
 React
+
 API Keys
-Key Features:
+
+## Key Features:
+
 DOM manipulation
+
 Working with API keys
+
 Advanced JavaScript concepts
+
 Sorting and filtering items
+
 Add to cart functionality
+
 Search functionality
+
 Responsive design using HTML, CSS, and React
 Each project is aimed at providing hands-on experience and deepening your knowledge of JavaScript, React, and related technologies.
