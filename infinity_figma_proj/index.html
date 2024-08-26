@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background: rgba(255, 255, 255, 1);
+
+        }
+
+        .dashboard {
+
+            /* border: 2px solid black; */
+            width: 1440px;
+            height: 1024px;
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        .purpleBox {
+
+            width: 241px;
+            height: 1024px;
+            /* border: 1px solid blue; */
+            background: rgba(155, 118, 214, 1);
+            border-right: 1px solid rgba(242, 244, 247, 1);
+            top: -522px;
+            left: -730px;
+        }
+
+        .firstBox {
+            height: 512.95px;
+            /* border: 1px solid green; */
+            /* border: 1px solid black; */
+            /* border: 1px solid black; */
+            margin-top: 35px;
+
+        }
+
+        .leftmenu {
+            width: 241px;
+            height: 400px;
+            /* border: 1px solid black; */
+            margin-top: 50px;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(1, 1fr);
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+
+        }
+
+
+        .menu {
+            /* border: 1px solid rgb(24, 21, 206); */
+
+
+        }
+
+        .menu1 {
+            /* border: 1px solid rgb(206, 21, 21); */
+            border-right: 3px solid rgba(190, 251, 122, 1);
+            background: linear-gradient(90deg, rgba(190, 251, 122, 0) 42.53%, #BEFB7A 230.08%);
+            width: 241px;
+            font-size: 30px;
+
+
+
+
+        }
+
+        .childmenu1 {
+            /* border: 1px dotted black; */
+            display: flex;
+            flex-direction: row;
+            width: 200px;
+            gap: 30px;
+            justify-content: center;
+            /* margin-top: 20px; */
+
+        }
+
+        .childmenu1 :nth-child(1) {
+            /* border: 1px solid rgb(39, 4, 4); */
+
+            height: 18px;
+            width: 18px;
+            /* border: 1px solid black; */
+            margin-left: 3px;
+
+        }
+
+        .childmenu1 :nth-child(2) {
+            height: 19px;
+            width: 84px;
+            color: rgba(190, 251, 122, 1);
+            /* border: 1px solid black; */
+            font-size: 20px;
+
+        }
+
+
+        .childmenu {
+            /* border: 1px dotted black; */
+            display: flex;
+            flex-direction: row;
+            width: 200px;
+            gap: 22px;
+            justify-content: center;
+
+            /* margin-top: 20px; */
+
+        }
+
+        .childmenu :nth-child(1) {
+            /* border: 1px solid rgb(39, 4, 4); */
+
+            height: 18px;
+            width: 18px;
+            /* border: 1px solid black; */
+
+
+
+        }
+
+        .childmenu :nth-child(2) {
+            height: 19px;
+            width: 84px;
+            font-family: 'Inter', sans-serif;
+            /* border: 1px solid black; */
+            color: rgba(255, 255, 255, 1);
+
+        }
+
+        .footer1 {
+            width: 241px;
+            height: 280px;
+            /* border: 2px solid rgb(137, 47, 255); */
+            margin-top: 190px;
+            display: grid;
+            gap: 8px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .footerLine {
+            width: 241px;
+            height: 0px;
+            gap: 0px;
+            border: 1px 0px 0px 0px;
+            opacity: 0px;
+            /* border: 1px solid rgba(187, 161, 227, 1) */
+        }
+
+        .footer {
+            height: 68px;
+            /* border: 1px solid yellow; */
+        }
+
+        .footerParent {
+            width: 200px;
+            /* border: 1px dotted green; */
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            margin-left: 20px;
+
+        }
+
+        .footerchild1 {
+            height: 42px;
+            width: 42px;
+            /* border: 1px solid black; */
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .footerchild2 {
+            height: 44px;
+            width: 155px;
+            /* border: 1px solid black; */
+            width: Fill (155px)px;
+
+
+        }
+
+        .lastChild1 {
+            width: 110px;
+            height: 19px;
+            color: rgba(255, 255, 255, 1);
+            font-size: 16px;
+        }
+
+        .lastChild2 {
+            width: 155px;
+            height: 17px;
+            color: rgba(255, 255, 255, 1);
+            font-size: 14px;
+        }
+
+        .footerLogo {
+            width: 18px;
+            height: 18px;
+            /* border: 1px solid black; */
+        }
+
+
+        .rightBox {
+            width: 1199px;
+            /* border: 2px dotted gray; */
+            height: 1024px;
+        }
+
+        .navBar {
+            width: 1199px;
+            /* border: 2px dotted gray; */
+            height: 75px;
+            display: flex;
+            flex-direction: row;
+            /* justify-content: space-around; */
+            gap: 720px;
+            align-items: center;
+            background-color: rgb(249, 252, 252);
+        }
+
+        .navLeft {
+            /* border: 1px solid black; */
+            width: 95px;
+            height: 22px;
+            font-size: 18px;
+            color: rgba(52, 64, 84, 1);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+
+        }
+
+        .navRight {
+            width: 309px;
+            height: 34px;
+            border: 1px solid rgb(139, 136, 136);
+            gap: 34px;
+            display: flex;
+            flex-direction: row;
+            border-radius: 30PX;
+
+
+
+        }
+
+        .navRigh1 {
+            /* border: 1px solid green; */
+            width: 251px;
+            height: 34px;
+            /* border: 1px solid rgba(234, 236, 240, 1); */
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+            padding-left: 8px;
+            border-radius: 8px;
+        }
+
+        .navRigh1 :nth-child(2) {
+            width: 59px;
+            height: 17px;
+            /* border: 1px solid black; */
+            color: rgba(152, 162, 179, 1);
+            font-size: 18px;
+
+        }
+
+        .navRigh2 {
+            /* border: 1px solid grey; */
+            width: 18px;
+            height: 18px;
+            margin-top: 5px;
+
+        }
+
+        .navRigh2 div {}
+
+
+        .parentLinks {
+            width: 1199px;
+            height: 900px;
+            /* border: 1px solid pink; */
+            display: flex;
+            flex-direction: row;
+            gap: 22px;
+            margin-left: 18px;
+            margin-top: 12px;
+        }
+
+        .parentLinkLeft {
+            width: 793px;
+            /* height: 600px; */
+            /* border: 2px solid rgba(242, 244, 247, 1) */
+        }
+
+        .parentLinkRight {
+            width: 326px;
+            /* height: 600px; */
+            /* border: 1px solid red; */
+            margin-left: 10px;
+
+        }
+
+        .quickLinksBox {
+            width: 793px;
+            height: 227px;
+
+            border: 2px solid rgba(242, 244, 247, 1);
+
+
+            border-radius: 12px;
+
+
+        }
+
+
+        .quickLink {
+            width: 761px;
+            height: 17px;
+            /* border: 1px solid black; */
+            font-size: 14px;
+            font-weight: 700;
+            margin-top: 10px;
+            margin-left: 10px;
+
+        }
+
+        .depositBox {
+            width: 761px;
+            height: 160px;
+            /* border: 1px solid green; */
+            margin-top: 15px;
+            margin-left: 10px;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            /* border: 2px solid rgba(242, 244, 247, 1) */
+
+
+        }
+
+        .depositBox1 {
+            width: 101px;
+            height: 73px;
+            border-radius: 8px;
+            /* border: 1px dotted rgb(70, 70, 7); */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(252, 252, 253, 1);
+            color: black;
+
+
+
+        }
+
+        .depositIcon {
+            height: 24px;
+            width: 24px;
+            /* border: 1px solid black; */
+            color: red;
+        }
+
+        .depositText {
+            height: 17px;
+
+            /* border: 1px solid black; */
+            margin-top: 5px;
+            color: rgba(52, 64, 84, 1);
+
+        }
+
+
+        .graphBox {
+            width: 793px;
+            height: 455.51px;
+            border-radius: 12px;
+            /* border: 1px solid black; */
+            margin-top: 23px;
+            /* border: 2px solid rgba(242, 244, 247, 1) */
+        }
+
+        .parentLinkRight1 {
+            width: 326px;
+            height: 355px;
+            top: 99px;
+            left: 1082px;
+            border-radius: 12px;
+            /* border: 1px solid black; */
+            /* border: 2px solid rgba(242, 244, 247, 1) */
+        }
+
+        .tradingAc {
+            width: 294px;
+            height: 17px;
+            /* border: 1px solid black; */
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(52, 64, 84, 1);
+            margin-top: 14px;
+            margin-left: 12px;
+
+        }
+
+
+        .masterAc1 {
+            width: 294px;
+            height: 135px;
+            border-radius: 12px;
+            /* border: 1px solid black; */
+            margin-top: 18px;
+            margin-left: 12px;
+            background: rgba(252, 252, 253, 1);
+            border: 1px solid rgba(242, 244, 247, 1)
+        }
+
+        .child1masterAc {
+            width: 93px;
+            height: 15px;
+            /* border: 1px solid black; */
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 14.52px;
+            margin-top: 20px;
+            margin-left: 15px;
+
+
+
+        }
+
+        .child2masterAc {
+            width: 125px;
+            height: 23px;
+            /* gap: 12px; */
+            /* border: 1px solid black; */
+            border-radius: 12px;
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            margin-top: 20px;
+            margin-left: 15px;
+
+        }
+
+        .cTrader {
+            color: rgba(52, 64, 84, 1);
+            width: 47px;
+            height: 15px;
+            /* border: 1px solid black; */
+            font-size: 12px;
+            background: rgb(226, 228, 230);
+            border-radius: 32px;
+
+        }
+
+        .tradenum {
+            /* color: red; */
+            width: 52px;
+            height: 15px;
+            font-size: 12px;
+            color: rgba(102, 112, 133, 1);
+        }
+
+        .child3masterAc {
+
+            width: 250px;
+            height: 25px;
+            display: flex;
+            justify-content: space-between;
+            /* margin-left: 10px; */
+            /* border: 1px solid black; */
+            margin-top: 10px;
+            margin-left: 15px;
+
+
+        }
+
+        .usdollar1 {
+            width: 74px;
+            height: 25px;
+            font-size: 32px;
+            font-weight: 700;
+
+        }
+
+        .usdollar2 {
+            width: 34px;
+            height: 19px;
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(52, 64, 84, 1);
+            margin-top: 10px;
+        }
+
+        .usdollar1Parent1 {
+            display: flex;
+            flex-direction: row;
+            /* border: 1px solid red; */
+            width: 95px;
+
+        }
+
+        .usdollar1Parent2 {
+            margin-top: 10px;
+        }
+
+        .tradeBigBox {
+            width: 326px;
+            height: 325px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            gap: 18px;
+            border-radius: 12px;
+            /* border: 2px; */
+            /* border: 1px solid black; */
+            margin-top: 30px;
+            border: 2px solid rgba(242, 244, 247, 1);
+
+        }
+
+        .tradeBox1 {
+            width: 294px;
+            height: 17px;
+            color: rgba(52, 64, 84, 1);
+            font-size: 14px;
+            font-weight: 500;
+            /* border: 1px solid red; */
+            margin-left: 16px;
+            margin-top: 15px;
+            /* gap: 18px; */
+
+            /* border: 2px */
+        }
+
+        .tradeBox2 {
+            width: 294px;
+            height: 74px;
+            /* padding: 12px 17px 12px 17px; */
+            gap: 8px;
+            border-radius: 12px;
+            /* border: 1px 0px 0px 0px; */
+            /* border: 1px solid black; */
+            border: 1px solid rgba(234, 236, 240, 1);
+            margin-left: 15px;
+            background: rgba(252, 252, 253, 1);
+
+        }
+
+        .tradeBox3 {
+            width: 294px;
+            height: 74px;
+            /* padding: 12px 17px 12px 17px; */
+            gap: 8px;
+            border-radius: 12px;
+            /* border: 1px 0px 0px 0px; */
+            /* border: 1px solid black; */
+            border: 1px solid rgba(234, 236, 240, 1);
+            margin-left: 15px;
+            background: rgba(252, 252, 253, 1);
+
+        }
+
+        .tradeBox4 {
+            width: 294px;
+            height: 74px;
+            /* padding: 12px 17px 12px 17px; */
+            gap: 8px;
+            border-radius: 12px;
+            /* border: 1px 0px 0px 0px; */
+            /* border: 1px solid black; */
+            border: 1px solid rgba(234, 236, 240, 1);
+            margin-left: 15px;
+            background: rgba(252, 252, 253, 1);
+
+        }
+
+
+        .tradeBox2child1 {
+            width: 260px;
+            height: 23px;
+            gap: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* border: 1px solid blueviolet; */
+            margin-left: 16px;
+            margin-top: 10px;
+
+        }
+
+        .tradeBoxSubChild1 {
+            width: 150px;
+            height: 23px;
+            gap: 10px;
+            /* border: 1px solid green; */
+            display: flex;
+            align-items: center;
+
+
+
+
+        }
+
+        .tradeBoxSubSubChild1 {
+            width: 50px;
+            height: 15px;
+
+            /* border: 1px solid red; */
+            font-size: 12px;
+            font-weight: 500;
+            color: rgba(102, 112, 133, 1);
+        }
+
+
+        .tradeBoxSubSubChild2 {
+            width: 29px;
+            height: 14px;
+            padding: 4px 8px 4px 8px;
+            gap: 8px;
+            border-radius: 32px;
+            font-family: Inter;
+            font-size: 12px;
+            font-weight: 500;
+            /* border: 1px solid #BEFB7A; */
+            background: var(--Background-Positive-Tertiary, rgba(235, 255, 238, 1));
+
+
+
+
+        }
+
+        .tradeBoxSubChild2 {
+            width: 23px;
+            height: 15px;
+            /* border: 1px solid green; */
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 14.52px;
+
+
+
+        }
+
+        .tradeBox2child2 {
+            width: 80px;
+            height: 19px;
+            gap: 2px;
+            /* border: 1px solid black; */
+            display: flex;
+            flex-direction: row;
+            /* justify-content: space-evenly; */
+            margin-left: 16px;
+            margin-top: 10px;
+
+        }
+
+        .tradeBox2child2 :nth-child(1) {
+            width: 58px;
+            height: 19px;
+            font-size: 16px;
+            font-weight: 700;
+            color: rgba(20, 174, 92, 1);
+        }
+
+        .tradeBox2child2 :nth-child(2) {
+            width: 30px;
+            height: 17px;
+            /* border: 1px solid black; */
+            color: rgba(52, 64, 84, 1);
+
+            font-size: 14px;
+            font-weight: 500;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .graphBox {
+            width: 793px;
+            height: 455.51px;
+
+            /* gap: 24px; */
+            border-radius: 12px;
+
+            border: 2px solid rgba(242, 244, 247, 1)
+        }
+
+        .overview {
+            width: 64px;
+            height: 17px;
+            /* border: 1px solid black; */
+            display: flex;
+
+
+        }
+
+        .graphOverview {
+            width: 761px;
+            height: 32px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            /* justify-content: center; */
+            align-items: center;
+            /* border: 1px solid black; */
+            margin-left: 15px;
+            margin-top: 12px;
+
+        }
+
+        .downloadReport {
+            width: 164px;
+            height: 32px;
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            /* border: 1px solid black; */
+        }
+
+
+        .downloadReportChild1 {
+            width: 16.2px;
+            height: 17.1px;
+            color: rgba(173, 142, 221, 1);
+            /* border: 1px solid black; */
+            display: flex;
+            /* align-items: center; */
+            margin-top: 6px;
+
+
+        }
+
+        .downloadReportChild2 {
+            width: 116px;
+            font-size: 14px;
+            font-weight: 500;
+            /* border: 1px solid black; */
+            padding-top: 7px;
+            color: rgba(173, 142, 221, 1);
+
+
+        }
+
+
+        .monthYear {
+            width: 164px;
+            height: 32px;
+            display: flex;
+            gap: 8px;
+            /* border: 1px solid black; */
+            margin-left: 15px;
+            margin-top: 20px;
+
+        }
+
+        .monthly {
+            width: 78px;
+            height: 32px;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .monthlyChild {
+            width: 62px;
+            height: 16px;
+            /* border: 1px solid green; */
+
+        }
+
+        .yearly {
+            width: 78px;
+            height: 32px;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            background: rgba(241, 235, 249, 1);
+
+        }
+
+        .yearlyChild {
+            width: 62px;
+            height: 16px;
+            /* border: 1px solid green; */
+        }
+
+
+        .graphThirdBox {
+            width: 761px;
+            height: 295.51px;
+            /* gap: 10.8px; */
+            /* border: 2px solid rgb(194, 23, 23); */
+            margin-left: 15px;
+            margin-top: 18px;
+            display: flex;
+            flex-direction: row;
+
+
+        }
+
+
+        .graphThirdBoxleft {
+            height: 295.51px;
+            width: 40px;
+            /* border: 1px solid green; */
+            /* display: grid;
+            grid-template-rows: repeat(5,1fr); */
+            display: flex;
+            flex-direction: column;
+            gap: 55px;
+
+
+        }
+
+
+        .graphThirdBoxleft1 {
+
+            width: 35px;
+            height: 13px;
+            font-size: 12px;
+            /* font-weight: 600; */
+            color: rgba(152, 162, 179, 1);
+            /* border: 1px solid brown; */
+            margin-left: 5px;
+
+        }
+
+
+        .graphThirdBoxright {
+            width: 703.41px;
+            height: 295.51px;
+            /* border: 1px solid blue; */
+            display: flex;
+            flex-direction: row;
+            column-gap: 8px;
+        }
+
+        .parentGraphpurpleBox {
+            width: 41px;
+            height: 295.51px;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: last baseline;
+            justify-content: center;
+            /* gap: 3.2px; */
+        }
+
+        .parentGraphpurpleBox1 {
+            width: 25px;
+            height: 189px;
+            border-radius: 4.8px 4.8px 0px 0px;
+            background: rgba(173, 142, 221, 1);
+
+        }
+
+
+
+        .parentGraphmonthleBox {
+            width: 761px;
+            height: 13px;
+            /* gap: 10.8px; */
+            /* border: 2px solid rgb(194, 23, 23); */
+            margin-left: 15px;
+            margin-top: 1px;
+            display: flex;
+            flex-direction: row;
+            /* justify-content: space-between; */
+
+        }
+
+        .parentGraphmonthleBoxleft {
+            height: 13px;
+            width: 36px;
+            /* border: 1px solid goldenrod; */
+        }
+
+        .parentGraphmonthleBoxRight {
+            width: 703.41px;
+            height: 13px;
+            /* border: 1px dotted black; */
+            display: flex;
+            flex-direction: row;
+            gap: 9px;
+        }
+
+        .parentGraphmonthleBoxRightchild1 {
+            width: 41px;
+            height: 13px;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            color: rgba(152, 162, 179, 1);
+
+            
+        }
+
+        .logoBox{
+            /* border: 1px solid yellow;
+             */
+            height: 57.95px;
+            width: 132.7px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-left: 50px;
+            column-gap: 5px;
+            
+        }
+
+        .logoBoxChild1{
+            font-size: 30px;
+            font-weight: 1000;
+            color: rgba(190, 251, 122, 1);
+            
+
+            
+
+        }
+
+
+        .logoBoxChild1 :nth-child(2){
+            margin-left: 19px;
+        
+        }
+
+        .logoBoxChild2 div{
+            color: rgba(190, 251, 122, 1);
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="dashboard">
+
+
+
+        <div class="purpleBox">
+
+
+
+            <div class="firstBox">
+
+                <div class="logo">
+                    <div class="logoBox">
+                        <div class="logoBoxChild1">
+                            <div>Ditch</div>
+                            <div>Dollar</div>
+                        </div>
+                        <div class="logoBoxChild2">
+                            <div>®</div>
+                        </div>
+                        
+                            
+                        
+
+                    </div>
+                </div>
+
+
+
+                <div class="leftmenu">
+
+
+                    <div class="menu1">
+                        <div class="childmenu1">
+                            <div style="color: rgb(238, 233, 233);">*</div>
+                            <div>Dashboard</div>
+                        </div>
+                    </div>
+
+                    <div class="menu">
+                        <div class="childmenu">
+                            <div style="color: rgb(238, 233, 233);">$</div>
+                            <div>CRM</div>
+                        </div>
+                    </div>
+
+
+                    <div class="menu">
+                        <div class="childmenu">
+                            <div style="color: rgb(238, 233, 233);">&</div>
+                            <div>MAM</div>
+                        </div>
+                    </div>
+
+
+                    <div class="menu">
+                        <div class="childmenu">
+                            <div style="color: rgb(238, 233, 233);">^/</div>
+                            <div >PAMM</div>
+                        </div>
+                    </div>
+
+
+                    <div class="menu">
+                        <div class="childmenu">
+                            <div style="color: rgb(238, 233, 233);">*</div>
+                            <div >Trade</div>
+                        </div>
+                    </div>
+
+
+                    <div class="menu">
+                        <div class="childmenu">
+                            <div style="color: rgb(238, 233, 233);" >W</div>
+                            <div style="color: rgb(238, 233, 233);">Wallets</div>
+                        </div>
+                    </div>
+
+
+                    <div class="menu">
+                        <div class="childmenu">
+                            <div style="color: rgb(238, 233, 233);">%</div>
+                            <div>Accounts</div>
+                        </div>
+                    </div>
+
+
+                    <div class="menu">
+                        <div class="childmenu">
+                            <div style="color: rgb(238, 233, 233);">#</div>
+                            <div>History</div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+            <div class="footer1">
+
+                <div class="menu">
+                    <div class="childmenu">
+                        <div style="color: whitesmoke;">*</div>
+                        <div>Notifications</div>
+                    </div>
+                </div>
+
+
+                <div class="menu">
+                    <div class="childmenu">
+                        <div style="color: whitesmoke;">%</div>
+                        <div>Settings</div>
+                    </div>
+                </div>
+
+
+
+                <div class="menu">
+                    <div class="childmenu" style="margin-left: 30px;">
+                        <div style="color: whitesmoke;">&</div>
+                        <div style="width: 150px;">Help & Support</div>
+                    </div>
+                </div>
+
+
+                <div class="menu">
+                    <div class="childmenu">
+                        <div style="color: whitesmoke;">@</div>
+                        <div>Log Out</div>
+                    </div>
+                </div>
+
+                <div class="footerLine"></div>
+
+
+                <div class="footer">
+                    <div class="footerParent">
+
+                        <div class="footerchild1">
+                            <div class="footerLogo" style="color: whitesmoke;">
+                                OO
+                            </div>
+                        </div>
+                        <div class="footerchild2">
+                            <div class="lastChild1">
+                                shyam shakur
+                            </div>
+                            <div class="lastChild2">
+                                shyamshakur@gmail
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <div class="rightBox">
+
+            <div class="navBar">
+                <div class="navLeft">Dashboard</div>
+
+                <div class="navRight">
+                    <div class="navRigh1">
+                        <div>Q</div>
+                        <div>Search..</div>
+                    </div>
+                    <div class="navRigh2">
+                        <div>B</div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="parentLinks">
+                <div class="parentLinkLeft">
+
+                    <div class="quickLinksBox">
+                        <div class="quickLink">quickLink</div>
+
+                        <div class="depositBox">
+
+                            <div class="depositBox1">
+                                <div class="depositIcon"><i class="material-icons" style="font-size:15px;color:rgba(102, 112, 133, 1);
+;">call_received</i></div>
+                                <div class='depositText'>Deposit</div>
+                            </div>
+                            <div class="depositBox1">
+                                <div class="depositIcon"><i class="material-icons" style="font-size:15px;color:rgba(102, 112, 133, 1); justify-content: center; align-items: center;">call_made</i></div>
+                                <div class='depositText'>Withdraw</div>
+                            </div>
+                            <div class="depositBox1">
+                                <div class="depositIcon" style="color:rgba(102, 112, 133, 1);">></div>
+                                <div class='depositText'>Setting</div>
+                            </div>
+                            <div class="depositBox1">
+                                <div class="depositIcon" style="color:rgba(102, 112, 133, 1);">*</div>
+                                <div class='depositText'>Verification</div>
+                            </div>
+                            <div class="depositBox1">
+                                <div class="depositIcon"><i class="material-icons" style="font-size:36px;color:rgba(102, 112, 133, 1); font-size: 20px;" >star_border</i></div>
+                                
+                                <div class='depositText' >Bonuses</div>
+                            </div>
+                            <div class="depositBox1">
+                                <div class="depositIcon" style="color:rgba(102, 112, 133, 1);">?</div>
+                                <div class='depositText'>MT5</div>
+                            </div>
+                            <div class="depositBox1">
+                                <div class="depositIcon" style="color:rgba(102, 112, 133, 1);">->></div>
+                                <div class='depositText'>Transfer</div>
+                            </div>
+                            <div class="depositBox1">
+                                <div class="depositIcon"><i class="material-icons" style="font-size:15px;color:rgba(102, 112, 133, 1);">history</i></div>
+                                <div class='depositText'>History</div>
+                            </div>
+                            <div class="depositBox1">
+                                <div class="depositIcon" style="font-size: 10px;color:rgba(102, 112, 133, 1);"><i class="material-icons">person_outline</i></div>
+                                <div class='depositText'>Partner</div>
+                            </div>
+                            <div class="depositBox1">
+                                <div class="depositIcon" style="color:rgba(102, 112, 133, 1);">+</div>
+                                <div class='depositText'>Exchange</div>
+                            </div>
+                            <div class="depositBox1">
+                                <div class="depositIcon"><i class="material-icons" style="font-size:20px ;color:rgba(102, 112, 133, 1);">poll</i></div>
+                                <div class='depositText'>Analytics</div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                   
+    <div class="graphBox">
+        <div class="graphOverview">
+            <div class="overview">
+                Overview
+            </div>
+            <div class="downloadReport">
+                <div class="downloadReportChild1">/></div>
+                <div class="downloadReportChild2">Download Report</div>
+            </div>
+        </div>
+
+
+
+        <div class="monthYear">
+            <div class="monthly">
+                <div class="monthlyChild">
+                    monthly
+                </div>
+            </div>
+            <div class="yearly">
+                <div class="yearlyChild">Yearly</div>
+            </div>
+        </div>
+
+
+
+        <div class="graphThirdBox">
+            <div class="graphThirdBoxleft">
+                <div class="graphThirdBoxleft1">$1500</div>
+                <div class="graphThirdBoxleft1">$1000</div>
+                <div class="graphThirdBoxleft1">$500</div>
+                <div class="graphThirdBoxleft1">$250</div>
+                <div class="graphThirdBoxleft1">0</div>
+            </div>
+            <div class="graphThirdBoxright">
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1"></div>
+
+                </div>
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1" style="height: 118px;">
+                        
+                    </div>
+                </div>
+
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1" style="height: 221px;">
+                        
+                    </div>
+                </div>
+
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1" style="height: 62.78px;">
+                
+                    </div>
+                </div>
+
+
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1" style="height: 254px;">
+                
+                    </div>
+                </div>
+
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1" style="height: 148px;">
+                
+                    </div>
+                </div>
+
+
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1" style="height: 171px;">
+                
+                    </div>
+                </div>
+
+
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1" style="height: 85px;">
+                
+                    </div>
+                </div>
+
+
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1" style="height: 262px;">
+                
+                    </div>
+                </div>
+
+
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1" style="height: 108px;">
+                
+                    </div>
+                </div>
+
+
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1" style="height: 138px;">
+                
+                    </div>
+                </div>
+
+
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1" style="height: 33px;">
+                
+                    </div>
+                </div>
+
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1" style="height: 83px;">
+                
+                    </div>
+                </div>
+
+
+                <div class="parentGraphpurpleBox">
+                    <div class="parentGraphpurpleBox1" style="height: 95px;">
+                
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="parentGraphmonthleBox">
+            <div class="parentGraphmonthleBoxleft"></div>
+
+            <div class="parentGraphmonthleBoxRight">
+
+                <div class="parentGraphmonthleBoxRightchild1">
+                    jan
+                </div>
+
+                <div class="parentGraphmonthleBoxRightchild1">
+                    feb
+
+                    </div>
+
+                    <div class="parentGraphmonthleBoxRightchild1">
+                        Mar
+                    </div>
+
+                    <div class="parentGraphmonthleBoxRightchild1">
+                        Apr
+    
+                        </div>
+
+                        <div class="parentGraphmonthleBoxRightchild1">
+                            Aug
+                        </div>
+
+                        <div class="parentGraphmonthleBoxRightchild1">
+                            May
+        
+                            </div>
+
+                            <div class="parentGraphmonthleBoxRightchild1">
+                                jun
+                            </div>
+                            <div class="parentGraphmonthleBoxRightchild1">
+                                July
+            
+                                </div>
+
+                                <div class="parentGraphmonthleBoxRightchild1">
+                                    Aug
+                                </div>
+
+                                <div class="parentGraphmonthleBoxRightchild1">
+                                    Sep
+                
+                                    </div>
+
+                                    
+                        <div class="parentGraphmonthleBoxRightchild1">
+                            Oct
+        
+                            </div>
+
+                            <div class="parentGraphmonthleBoxRightchild1">
+                                Nov
+                            </div>
+                            <div class="parentGraphmonthleBoxRightchild1">
+                                Dec
+            
+                                </div>
+
+                                <div class="parentGraphmonthleBoxRightchild1">
+                                    Dec
+                
+                                    </div>
+
+                                
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+                </div>
+
+
+
+                <div class="parentLinkRight">
+
+                    <div class="parentLinkRight1">
+                        <div class="tradingAc">
+                            Trading Accounts
+                        </div>
+                        <div class="masterAc1">
+                            <div class="child1masterAc">Master Account</div>
+
+                            <div class="child2masterAc">
+                                <div class="cTrader">cTrader</div>
+                                <div class="tradenum">#273728</div>
+
+                            </div>
+                            <div class="child3masterAc">
+                                <div class="usdollar1Parent1">
+                                    <div class="usdollar1">0.00</div>
+                                    <div class="usdollar2">USD</div>
+                                </div>
+                                <div class="usdollar1Parent2">/></div>
+                            </div>
+                        </div>
+                        <div class="masterAc1">
+                            <div class="child1masterAc">Master Account</div>
+
+                            <div class="child2masterAc">
+                                <div class="cTrader">cTrader</div>
+                                <div class="tradenum">#273728</div>
+
+                            </div>
+                            <div class="child3masterAc">
+                                <div class="usdollar1Parent1">
+                                    <div class="usdollar1">0.00</div>
+                                    <div class="usdollar2">USD</div>
+                                </div>
+                                <div class="usdollar1Parent2">/></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tradeBigBox">
+
+                        <div class="tradeBox1">Open Trades</div>
+
+                        <div class="tradeBox2">
+                            <div class="tradeBox2child1">
+                                <div class="tradeBoxSubChild1">
+                                    <div class="tradeBoxSubSubChild1">GBPUSD</div>
+                                    <div class="tradeBoxSubSubChild2">Long</div>
+                                </div>
+                                <div class="tradeBoxSubChild2">0.12</div>
+                            </div>
+                            <div class="tradeBox2child2">
+                                <div>+56.00</div>
+                                <div>USD</div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="tradeBox3">
+                            <div class="tradeBox2child1">
+                                <div class="tradeBoxSubChild1">
+                                    <div class="tradeBoxSubSubChild1">USDJPY</div>
+                                    <div class="tradeBoxSubSubChild2">Long</div>
+                                </div>
+                                <div class="tradeBoxSubChild2">0.52</div>
+                            </div>
+                            <div class="tradeBox2child2" style="width: 80px;">
+                                <div style="color: red;">-0.09</div>
+                                <div>USD</div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="tradeBox3">
+                            <div class="tradeBox2child1">
+                                <div class="tradeBoxSubChild1">
+                                    <div class="tradeBoxSubSubChild1">EURUDS</div>
+                                    <div class="tradeBoxSubSubChild2" style="background: rgba(254, 233, 231, 1)">Long</div>
+                                </div>
+                                <div class="tradeBoxSubChild2">0.52</div>
+                            </div>
+                            <div class="tradeBox2child2" style="width: 80px;">
+                                <div style="color: red;">-0.09</div>
+                                <div>USD</div>
+                            </div>
+                        </div>
+
+<!-- 
+                        <div class="tradeBox4">
+                            <div class="tradeBox2child1">
+                                <div class="tradeBoxSubChild1">
+                                    <div class="tradeBoxSubSubChild1">GBPUSD</div>
+                                    <div class="tradeBoxSubSubChild2" style="background: rgba(254, 233, 231, 1)">Short<div>
+                                </div>
+                                <div class="tradeBoxSubChild2">0.32</div>
+                            </div>
+                            <div class="tradeBox2child2">
+                                <div style="color: red;">-1.09</div>
+                                <div>USD</div>
+                        </div>
+                    </div> -->
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
