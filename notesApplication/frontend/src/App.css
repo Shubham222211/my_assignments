@@ -1,0 +1,109 @@
+/* General Styles */
+body {
+    font-family: 'Baskerville Old Face', serif; /* Preferred font style */
+    background-color: #f4f4f4; /* Light background color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container */
+.container {
+    max-width: 200px; /* Maximum width for the main container */
+    margin: 20px auto; /* Center the container */
+    padding: 20px; /* Padding around the container */
+    background: white; /* White background for notes */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    /* border: 1px solid black; */
+}
+
+/* Heading styles */
+h2 {
+    color: #333; /* Dark text color */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+/* Input and textarea styles */
+input[type="text"],
+textarea {
+    width: 50%; /* Full width */
+    padding: 10px; /* Padding inside inputs */
+    margin: 10px 0; /* Margin above and below */
+    border: 1px solid #a19898; /* Light gray border */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+/* Button styles */
+button {
+    padding: 10px 15px; /* Padding inside buttons */
+    border: none; /* No border */
+    border-radius: 4px; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-right: 10px; /* Space between buttons */
+}
+
+button:hover {
+    background-color: #e0e0e0; /* Light gray background on hover */
+}
+
+/* Specific button styles */
+button#logout {
+    background-color: red; /* Red background for logout button */
+    color: white; /* White text color */
+}
+
+button#logout:hover {
+    background-color: darkred; /* Darker red on hover */
+}
+
+/* Notes display styles */
+.note {
+    margin-bottom: 15px; /* Space below each note */
+    padding: 15px; /* Padding inside each note */
+    border: 1px solid #ccc; /* Light gray border for notes */
+    border-radius: 4px; /* Rounded corners for notes */
+    background: #f9f9f9; /* Slightly different background for notes */
+    display: flex; /* Flex layout for better structure */
+    flex-direction: row; /* Stack elements vertically */
+}
+
+/* Note title and content styles */
+.note-title {
+    font-weight: bold; /* Bold title */
+    font-size: 1.2em; /* Slightly larger font for the title */
+    word-wrap: break-word; /* Ensure long words wrap to the next line */
+    overflow-wrap: break-word; /* Support for wrapping long words */
+}
+
+.note-status {
+    margin: 5px 0; /* Margin for the status */
+    color: #666; /* Light gray color for status */
+}
+
+.note-content {
+    margin: 5px 0; /* Margin for content */
+    white-space: pre-wrap; /* Preserve white space and allow wrapping */
+}
+
+/* Pagination controls */
+.pagination {
+    margin-top: 20px; /* Space above pagination */
+}
+
+/* No notes message */
+p.no-notes {
+    text-align: center; /* Center the no notes message */
+    color: #666; /* Light gray color */
+}
+
+/* Responsive Styles */
+@media (min-width: 600px) {
+    .note {
+        flex-direction: row; /* Change layout for larger screens */
+        justify-content: space-between; /* Space between elements */
+        align-items: center; /* Center items vertically */
+    }
+    .note p {
+        margin: 0; /* Remove margin for paragraphs inside notes for horizontal layout */
+    }
+}

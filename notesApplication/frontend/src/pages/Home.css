@@ -1,0 +1,59 @@
+/* Home.css */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+  }
+  
+  .home-content {
+    text-align: center;
+    max-width: 500px;
+  }
+  
+  .home-content h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .home-content p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .home-button {
+    padding: 12px 24px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-button {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .register-button:hover {
+    background-color: #45a049;
+  }
+  
+  .login-button {
+    background-color: #008CBA;
+    color: white;
+  }
+  
+  .login-button:hover {
+    background-color: #007bb5;
+  }
+  
